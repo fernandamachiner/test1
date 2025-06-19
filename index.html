@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserva de Espaço de Coworking</title>
+    <title>Sala de Educação e Cooperação Social</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,15 +12,11 @@
         /* Usando a fonte Inter do Google Fonts */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #f3f4f6; /* Cor de fundo cinza claro */
+            background-color: #f3f4f6;
         }
-        /* Estilo para a mensagem de sucesso para animação de fade-in-out */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out forwards;
-        }
-        .fade-out {
-            animation: fadeOut 0.5s ease-in-out 3s forwards;
-        }
+        /* Animações de Fade */
+        .fade-in { animation: fadeIn 0.5s ease-in-out forwards; }
+        .fade-out { animation: fadeOut 0.5s ease-in-out 3s forwards; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
@@ -29,58 +25,62 @@
             from { opacity: 1; transform: translateY(0); }
             to { opacity: 0; transform: translateY(-10px); }
         }
-        /* Estilos personalizados para os inputs de data e hora para mostrar o placeholder */
-        input[type="date"]:not(:valid):before {
-            content: attr(placeholder);
+        
+        /* Altera a cor do texto para simular um placeholder */
+        .date-time-placeholder {
             color: #a1a1aa;
         }
-        input[type="time"]:not(:valid):before {
-            content: attr(placeholder);
-            color: #a1a1aa;
-        }
+
     </style>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
+<body class="flex items-center justify-center min-h-screen bg-gray-100 p-4">
 
     <div class="container mx-auto p-4 max-w-lg">
         <div class="bg-white rounded-2xl shadow-xl p-8">
-            <!-- Cabeçalho do Formulário -->
-            <div class="text-center mb-8">
-                <h1 class="text-3xl font-bold text-gray-800">Reserva de Coworking</h1>
-                <p class="text-gray-500 mt-2">Preencha os detalhes abaixo para agendar seu espaço.</p>
+            
+            <!-- Logos -->
+            <div class="flex justify-center items-center gap-4 mb-6">
+                <img src="https://placehold.co/100x100/E2E8F0/333?text=Logo+1" alt="Logo Principal 1" class="h-24 w-auto">
+                <img src="https://placehold.co/100x100/E2E8F0/333?text=Logo+2" alt="Logo Principal 2" class="h-24 w-auto">
             </div>
 
-            <!-- Formulário de Reserva -->
+            <!-- Cabeçalho -->
+            <div class="text-center mb-8">
+                <h1 class="text-3xl font-bold text-[#0A4F8C]">Sala de Educação e Cooperação Social</h1>
+                <p class="text-xl font-semibold text-[#3E8D50] mt-2">Reserva Individual!</p>
+            </div>
+
+            <!-- Formulário -->
             <form id="bookingForm" class="space-y-6">
-                <!-- Inputs de Informações Pessoais -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- ... campos de nome, telefone, e-mail ... -->
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="form-group">
                         <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Nome Completo</label>
-                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="Seu nome">
+                        <input type="text" id="name" name="name" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200" placeholder="Seu nome">
                     </div>
                      <div class="form-group">
                         <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Telefone</label>
-                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="(00) 00000-0000">
+                        <input type="tel" id="phone" name="phone" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200" placeholder="(00) 00000-0000">
                     </div>
                 </div>
                  <div class="form-group">
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-1">E-mail</label>
-                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="seu@email.com">
+                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200" placeholder="seu@email.com">
                 </div>
 
-                <!-- Inputs de Data e Hora -->
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- ... campos de data e hora com largura ajustada ... -->
+                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div class="form-group">
                         <label for="date" class="block text-sm font-medium text-gray-700 mb-1">Data</label>
-                        <input type="date" id="date" name="date" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="dd/mm/aaaa">
+                        <input type="date" id="date" name="date" required class="w-full max-w-[140px] mx-auto px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200">
                     </div>
                     <div class="form-group">
-                        <label for="startTime" class="block text-sm font-medium text-gray-700 mb-1">Hora de Início</label>
-                        <input type="time" id="startTime" name="startTime" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="--:--">
+                        <label for="startTime" class="block text-sm font-medium text-gray-700 mb-1">Hora de Chegada</label>
+                        <input type="time" id="startTime" name="startTime" required class="w-full max-w-[140px] mx-auto px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200">
                     </div>
                     <div class="form-group">
                         <label for="endTime" class="block text-sm font-medium text-gray-700 mb-1">Hora de Saída</label>
-                        <input type="time" id="endTime" name="endTime" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200" placeholder="--:--">
+                        <input type="time" id="endTime" name="endTime" required class="w-full max-w-[140px] mx-auto px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200">
                     </div>
                 </div>
 
@@ -88,114 +88,160 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="form-group">
                         <label for="space" class="block text-sm font-medium text-gray-700 mb-1">Espaço</label>
-                        <select id="space" name="space" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                        <select id="space" name="space" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200">
                             <option value="" disabled selected>Selecione um espaço</option>
-                            <option value="1">Espaço Alpha</option>
-                            <option value="2">Espaço Beta</option>
-                            <option value="3">Espaço Gamma</option>
+                            <option value="metaverso">Metaverso</option>
+                            <option value="monitoramento">Espaço de Monitoramento</option>
+                            <option value="conferencia">Espaço de Conferência</option>
                         </select>
                     </div>
-                    <div class="form-group">
-                        <label for="table" class="block text-sm font-medium text-gray-700 mb-1">Mesa</label>
-                        <select id="table" name="table" required class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
-                            <option value="" disabled selected>Selecione uma mesa</option>
-                            <!-- Opções de mesa serão preenchidas por JS -->
+                    <div id="table-group" class="form-group">
+                        <label for="table" class="block text-sm font-medium text-gray-700 mb-1">Mesa / Estação</label>
+                        <select id="table" name="table" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200">
+                            <!-- Opções preenchidas dinamicamente por JS -->
                         </select>
                     </div>
                 </div>
 
+                <!-- NOVO CAMPO: Equipamentos Eletronicos -->
+                <div class="form-group">
+                    <label for="equipment" class="block text-sm font-medium text-gray-700 mb-1">Equipamentos Eletronicos</label>
+                    <select id="equipment" name="equipment" class="w-full px-4 py-2 bg-gray-50 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#0A4F8C] focus:border-[#0A4F8C] transition duration-200">
+                        <option value="" disabled selected>Selecione um equipamento (opcional)</option>
+                        <option value="notebook">Notebook</option>
+                        <option value="fone_de_ouvido">Fone de Ouvido</option>
+                    </select>
+                </div>
+
                 <!-- Botão de Envio -->
                 <div class="form-group pt-4">
-                    <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition duration-300 transform hover:scale-105">
+                    <button type="submit" class="w-full bg-[#0A4F8C] text-white font-bold py-3 px-4 rounded-lg hover:bg-[#084173] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FBC02D] transition duration-300 transform hover:scale-105">
                         Reservar Agora
                     </button>
                 </div>
             </form>
             
-            <!-- Mensagem de Sucesso -->
-            <div id="successMessage" class="hidden text-center mt-6 p-4 bg-green-100 text-green-800 rounded-lg">
-                Sua reserva foi confirmada com sucesso!
-            </div>
-            
-            <!-- Mensagem de Erro -->
-            <div id="errorMessage" class="hidden text-center mt-6 p-4 bg-red-100 text-red-800 rounded-lg">
-                Por favor, preencha todos os campos obrigatórios.
-            </div>
+            <!-- Mensagens de Feedback -->
+            <div id="successMessage" class="hidden text-center mt-6 p-4 rounded-lg"></div>
+            <div id="errorMessage" class="hidden text-center mt-6 p-4 rounded-lg"></div>
+
         </div>
     </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Seletores de Elementos
             const bookingForm = document.getElementById('bookingForm');
             const successMessage = document.getElementById('successMessage');
             const errorMessage = document.getElementById('errorMessage');
-
-            // Preencher opções de mesa
+            const spaceSelect = document.getElementById('space');
             const tableSelect = document.getElementById('table');
-            for (let i = 1; i <= 10; i++) {
-                const option = document.createElement('option');
-                option.value = i;
-                option.textContent = `Mesa ${i}`;
-                tableSelect.appendChild(option);
+            const tableGroup = document.getElementById('table-group');
+            const dateTimeInputs = document.querySelectorAll('input[type="date"], input[type="time"]');
+            
+            // Configurações de Mesas
+            const tableOptionsConfig = {
+                metaverso: { start: 1, end: 2, prefix: 'Mesa' },
+                monitoramento: { start: 1, end: 8, prefix: 'Mesa' },
+                conferencia: { start: 10, end: 20, prefix: 'Mesa' }
+            };
+
+            // Atualiza Opções de Mesa
+            function updateTableOptions() {
+                const selectedSpace = spaceSelect.value;
+                tableSelect.innerHTML = '<option value="" disabled selected>Selecione uma opção</option>';
+                tableSelect.required = false;
+                tableGroup.style.display = 'none';
+
+                if (selectedSpace && tableOptionsConfig[selectedSpace]) {
+                    const config = tableOptionsConfig[selectedSpace];
+                    tableGroup.style.display = 'block';
+                    tableSelect.required = true;
+                    for (let i = config.start; i <= config.end; i++) {
+                        const option = document.createElement('option');
+                        option.value = i;
+                        option.textContent = `${config.prefix} ${i}`;
+                        tableSelect.appendChild(option);
+                    }
+                }
             }
 
-            // Manipulador de envio do formulário
-            bookingForm.addEventListener('submit', function(event) {
-                event.preventDefault(); // Impede o envio padrão do formulário
+            // Exibe mensagem de feedback
+            function showMessage(element, text, isSuccess = true) {
+                element.textContent = text;
+                if (isSuccess) {
+                    element.className = 'text-center mt-6 p-4 rounded-lg bg-green-100 text-[#3E8D50]';
+                } else {
+                    element.className = 'text-center mt-6 p-4 rounded-lg bg-red-100 text-red-700';
+                }
+                element.classList.remove('hidden');
+            }
 
-                // Esconde mensagens anteriores
+            // Esconde mensagens
+            function hideMessages() {
                 successMessage.classList.add('hidden');
                 errorMessage.classList.add('hidden');
-                successMessage.classList.remove('fade-in', 'fade-out');
-                
-                // Coleta dos dados do formulário
-                const formData = new FormData(bookingForm);
-                const booking = {};
-                let allFieldsFilled = true;
+            }
 
-                for(let [key, value] of formData.entries()) {
-                    booking[key] = value;
-                    if (!value) {
-                       allFieldsFilled = false;
+            // Função para gerenciar a cor do placeholder de data/hora
+            function handleDateTimePlaceholder(input) {
+                if (input.value) {
+                    input.classList.remove('date-time-placeholder');
+                } else {
+                    input.classList.add('date-time-placeholder');
+                }
+            }
+            
+            // Event Listeners
+            spaceSelect.addEventListener('change', updateTableOptions);
+
+            // Adiciona listeners para os campos de data e hora
+            dateTimeInputs.forEach(input => {
+                handleDateTimePlaceholder(input); // Define o estado inicial
+                input.addEventListener('change', () => handleDateTimePlaceholder(input));
+            });
+
+            // Manipulador de Envio do Formulário Principal
+            bookingForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+                hideMessages();
+                
+                let allFieldsFilled = true;
+                for (const element of bookingForm.elements) {
+                    if (element.required && !element.value) {
+                        allFieldsFilled = false;
+                        break;
                     }
                 }
                 
-                // Validação
                 if (!allFieldsFilled) {
-                    errorMessage.classList.remove('hidden');
-                    return; // Interrompe a execução se algum campo estiver vazio
+                    showMessage(errorMessage, 'Por favor, preencha todos os campos obrigatórios.', false);
+                    return;
                 }
 
-                // Salva no localStorage
                 try {
+                    const formData = new FormData(bookingForm);
+                    const booking = Object.fromEntries(formData.entries());
                     const bookings = JSON.parse(localStorage.getItem('coworkingBookings')) || [];
                     bookings.push(booking);
                     localStorage.setItem('coworkingBookings', JSON.stringify(bookings));
                     
-                    // Mostra mensagem de sucesso com animação
-                    successMessage.classList.remove('hidden');
+                    showMessage(successMessage, 'Sua reserva foi confirmada com sucesso!');
                     successMessage.classList.add('fade-in', 'fade-out');
 
-                    // Limpa o formulário
                     bookingForm.reset();
+                    updateTableOptions();
+                    dateTimeInputs.forEach(handleDateTimePlaceholder); // Reseta a cor após o envio
                     
-                    // Garante que o placeholder do select seja exibido novamente
-                    tableSelect.value = "";
-                    document.getElementById('space').value = "";
-
-                    // Remove a classe de animação após a conclusão para futuras submissões
-                    setTimeout(() => {
-                        successMessage.classList.add('hidden');
-                        successMessage.classList.remove('fade-in', 'fade-out');
-                    }, 3500);
-
-
+                    setTimeout(hideMessages, 4000);
                 } catch (error) {
                     console.error("Erro ao salvar no localStorage:", error);
-                    errorMessage.textContent = 'Ocorreu um erro ao salvar sua reserva.';
-                    errorMessage.classList.remove('hidden');
+                    showMessage(errorMessage, 'Ocorreu um erro ao salvar sua reserva.', false);
                 }
             });
+
+            // Inicialização
+            updateTableOptions();
         });
     </script>
 </body>
